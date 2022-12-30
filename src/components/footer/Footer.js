@@ -22,7 +22,7 @@ export default function Footer() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="mb-3 d-inline-block" to="/our-story">
+                <NavLink className="mb-3 d-inline-block" to="/ourstory">
                   Our Story
                 </NavLink>
               </li>
@@ -32,7 +32,7 @@ export default function Footer() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="mb-3 d-inline-block" to="/contact-us">
+                <NavLink className="mb-3 d-inline-block" to="/contact">
                   Contact Us
                 </NavLink>
               </li>

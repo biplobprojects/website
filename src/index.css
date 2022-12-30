@@ -1,17 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 @font-face {
-    font-family: Mariposa-sans;
-    src: url(../src/assets/fonts/MariposaSansStd-Book.otf);
-  }
-*{
-    box-sizing: border-box;
+  font-family: Mariposa-sans;
+  src: url(../src/assets/fonts/MariposaSansStd-Book.otf);
+}
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family: poppins !important;
-    background-color: transparent;
+body {
+  font-family: poppins !important;
+  background-color: transparent;
 }
-.container{
+.container {
+  max-width: 95% !important;
+  margin: 0 auto;
+}
+.page-container {
+  max-width: 65% !important;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-container p {
+  font-size: 17px;
+  font-family: poppins;
+  color: #121212bf;
+  line-height: 34px;
+  font-weight: 400;
+}
+.page-container .title--mod {
+  font-size: 48px;
+}
+.page-container h5 {
+  font-size: 17px;
+  color: #121212bf;
+}
+.page-container a {
+  color: #121212bf !important;
+}
+
+@media only screen and (max-width: 769px) {
+  .page-container {
     max-width: 95% !important;
-    margin: 0 auto;
+  }
+  .page-container p {
+    font-size: 16px;
+
+    line-height: 32px;
+  }
+  .page-container .title--mod {
+    font-size: 40px;
+  }
 }

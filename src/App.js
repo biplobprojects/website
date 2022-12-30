@@ -13,6 +13,7 @@ import Cart from './views/cart/Cart';
 import Login from './views/login/Login';
 import OurStory from './views/ourstory/OurStory';
 import Contact from './views/contact/Contact';
+import TermsCondition from './views/termscondition/TermsCondition';
 function App() {
   return (
    <Routes>
@@ -28,6 +29,7 @@ function App() {
     <Route path='/cart' element={<Cart/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/ourstory' element={<OurStory/>}/>
+    <Route path="/terms-conditions" element={<TermsCondition/>}/>
 
    </Routes>
   );

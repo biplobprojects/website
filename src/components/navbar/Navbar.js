@@ -11,7 +11,7 @@ import {FaFacebookSquare} from 'react-icons/fa';
 
 import  Logo from '../../assets/images/Logo.png'
 
-const Navbar = () => {
+const Navbar = ({sticky}) => {
 
     const [click, setClick] = React.useState(false);
 
