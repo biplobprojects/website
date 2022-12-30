@@ -1,0 +1,27 @@
+.contact-container{
+  padding: 40px 0;
+}
+
+
+
+.contact-container p{
+  color: rgb(207, 26, 26);
+  font-family: poppins;
+  font-size: 14px;
+}
+.contact-container h5{
+  color: #808080;
+  font-family: poppins;
+  font-size: 16px;
+  line-height: 26px;
+}
+.contact-container h5 img{
+  width: 22px;
+}
+
+@media screen and (min-width:769px) {
+
+  .contact-container .container{ 
+    max-width: 65% !important;
+  }
+}

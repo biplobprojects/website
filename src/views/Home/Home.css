@@ -1,0 +1,30 @@
+.section-container {
+  padding: 36px 0px;
+}
+
+.benefit-container img {
+  width: 100vw;
+}
+.section-sub-container {
+  max-width: 55rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: poppins;
+  font-size: 17px;
+  color: #121212bf;
+  line-height: 34x;
+}
+.video-container {
+  height: 500px;
+  width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .section-container {
+    padding: 36px 0px 0px 0px;
+  }
+  .video-container{
+   height: auto;
+  }
+}
+

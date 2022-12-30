@@ -1,0 +1,28 @@
+.review-container img{
+    width: 50%;
+    height: 50%;
+    font-family: poppins;
+}
+.review-sub-container{
+    padding: 0 30px 30px 30px;
+}
+
+.review-sub-container span{
+    color: orange;
+    font-size: 24px;
+}
+.review-sub-container p{
+    color: #121212BF;
+    font-size: 17px;
+    line-height: 30px;
+}
+.review-sub-container p:last-of-type{
+    font-weight: 600;
+}
+@media screen and (max-width:1024px) {
+
+    .review-container img{
+      height: 35%;
+      width: 35%;
+    }
+    }

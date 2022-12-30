@@ -1,0 +1,9 @@
+.wrapper-container{
+    margin-top: 100px;
+}
+
+@media screen and (max-width:1150px) {
+    .wrapper-container{
+        margin-top: 80px;
+    }
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@font-face {
+    font-family: Mariposa-sans;
+    src: url(../src/assets/fonts/MariposaSansStd-Book.otf);
+  }
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: poppins !important;
+    background-color: transparent;
+}
+.container{
+    max-width: 95% !important;
+    margin: 0 auto;
+}

@@ -1,0 +1,138 @@
+
+@font-face {
+    font-family: Mariposa-sans;
+    src: url(../../assets/fonts/MariposaSansStd-Book.otf);
+  }
+.banner-main-container{
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.banner-sub-container{
+padding: 3.5rem 1rem;
+display: flex;
+align-items: center;
+width: 100%;
+}
+
+.banner-sub-container h1,.banner-sub-container h1 span {
+    font-size: 40px;
+    line-height: 55px;
+    color:#121212;
+    font-weight: 500;
+    font-family: Mariposa-sans;
+
+}
+.banner-sub-container h1 span{
+    padding: 0 4px;
+}
+
+.banner-sub-container p{
+    font-size: 26px;
+    line-height: 36px;
+    color:#121212;
+    font-family: Mariposa-sans;
+
+}
+.banner-sub-container hr{
+border-width: 2px;
+color:#121212BF;
+
+}
+.banner-sub-container span{
+    font-size: 18px;
+    color: #121212BF;
+}
+
+.banner-sub-container a{
+    border: 1px solid orange;
+    background: orange;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+.banner-sub-container a:hover{
+    font-size: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.banner-sub-container a:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+    z-index: 99;
+}
+.carousel-control-prev,
+.carousel-control-next
+{
+    display: none !important;
+}
+
+.image-container{
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.image-container img{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+  
+}
+.banner1{
+    background-image: url("../../assets/images/Banner_1.jpg");
+}
+.banner2{
+    background-image: url("../../assets/images/Banner_4.jpg");
+
+}
+.banner3{
+    background-image: url("../../assets/images/banner3.jpg");
+}
+.banner3 span{
+    font-size: 26px;
+    color:#121212;
+    font-family: Mariposa-sans;
+}
+.banner3 img{
+    width: 18%;
+    margin-top: -13px;
+}
+.banner4{
+    background-image: url("../../assets/images/Banner_3.jpg");
+}
+.banner5{
+    background-image: url("../../assets/images/Banner_5.jpg");
+
+}
+.banner-bg{
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width:769px) {
+
+.banner .mobile-visible{
+    display: none !important;
+}
+.banner .mobile-hide{
+    display: block !important;
+}
+}
+@media screen and (max-width:769px) {
+    .banner .mobile-visible{
+        display: initial !important;
+    }
+    .banner .mobile-hide{
+        display: none !important; 
+    }
+}

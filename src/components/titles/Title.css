@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Mariposa-sans;
+    src: url(../../assets/fonts/MariposaSansStd-Book.otf);
+  }
+.title{
+    font-family: Mariposa-sans;
+    font-size: 40px;
+    color: #121212;
+}
+
+@media screen and (max-width:769px) {
+ .title{ font-size: 30px;
+ }
+}
