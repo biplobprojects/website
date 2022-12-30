@@ -104,9 +104,10 @@ export default function Footer() {
       </div>
       <hr className="footer-hr"></hr>
       <div className="copyright-container d-flex justify-content-center">
-        <p>© 2022, <Link to="/">livasanatural</Link> | All Right Reserved</p>
+        <p>
+          © 2022, <Link to="/">livasanatural</Link> | All Right Reserved
+        </p>
       </div>
     </div>
-    
   );
 }

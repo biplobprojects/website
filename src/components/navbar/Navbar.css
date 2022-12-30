@@ -1,12 +1,12 @@
 .navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 20;
-    border-bottom: 0.8px solid rgb(231 229 229);
-    height: 100px;
-    background: white;
-    z-index: 9;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  border-bottom: 0.8px solid rgb(231 229 229);
+  height: 100px;
+  background: white;
+  z-index: 9;
 }
 
 .nav-container {
@@ -37,12 +37,6 @@
   margin-left: 1rem;
 }
 
-.nav-item a:hover,
-a.active {
-  border-bottom: 2px solid #121212;
-  color: #121212;
-}
-
 .nav-icon {
   display: none;
 }
@@ -71,6 +65,11 @@ a.active {
   justify-content: space-between;
 }
 @media screen and (max-width: 1150px) {
+  .nav-item a:hover,
+  a.active {
+    border-bottom: 2px solid #121212;
+    color: #121212;
+  }
   .mobile-icons {
     display: block;
   }

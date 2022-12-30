@@ -33,7 +33,6 @@ import honey7 from "../../assets/images/Honey_250g_8.jpg";
 import honey77 from "../../assets/images/Honey_500g_8.jpg";
 import honey8 from "../../assets/images/Sidr_250g.jpg";
 import honey88 from "../../assets/images/Sidr_500g.jpg";
-import data from "../../arraydata.json";
 
 export default function Home() {
   const collectionCardData = [
