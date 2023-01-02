@@ -4,7 +4,7 @@
   overflow: hidden;
   z-index: 1;
 }
-.product-container::after {
+/* .product-container::after {
   content: "";
   position: absolute;
   left: 0;
@@ -14,7 +14,7 @@
   background: #e5e5e5;
   opacity: 0;
   transition: 0.5s ease all;
-}
+} */
 .product-main-container .product-container img {
   transition: 0.5s ease all;
   width: 100%;

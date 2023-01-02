@@ -64,10 +64,15 @@
 .nav-item-container {
   justify-content: space-between;
 }
+.nav-item a:hover,
+a.active {
+  border-bottom: 1px solid #121212;
+  color: #121212;
+}
 @media screen and (max-width: 1150px) {
   .nav-item a:hover,
   a.active {
-    border-bottom: 2px solid #121212;
+    border-bottom: none;
     color: #121212;
   }
   .mobile-icons {
@@ -195,3 +200,4 @@
     height: 24px;
   }
 }
+

@@ -35,7 +35,7 @@ export default function Contact() {
     <div className="contact-container">
       <div className="container">
         <Title class="mb-4" heading="Contact" />
-        <form className="" onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           {submitData && (
             <h5 className="mb-4">
               <img src={success} alt="Success" className="me-1" />

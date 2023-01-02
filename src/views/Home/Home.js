@@ -33,7 +33,7 @@ import honey7 from "../../assets/images/Honey_250g_8.jpg";
 import honey77 from "../../assets/images/Honey_500g_8.jpg";
 import honey8 from "../../assets/images/Sidr_250g.jpg";
 import honey88 from "../../assets/images/Sidr_500g.jpg";
-
+import  data  from "../../test.json";
 export default function Home() {
   const collectionCardData = [
     { image: honey, title: "Honey", url: Vinegar },
@@ -41,7 +41,7 @@ export default function Home() {
     { image: shilajit, title: "Shilajit" },
     { image: Vinegar, title: "Vinegar" },
   ];
-
+console.log(data,"kghikigj")
   const ProductCardData = [
     { image: honey1, url: honey11, title: "Acacia Honey", Price: "340.00" },
     { image: honey2, url: honey22, title: "Jammun Honey", Price: "269.00" },
@@ -82,11 +82,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* {data.map((e)=>{
-        return(<img src={e.image}/>)
-      })} */}
       <Banner />
-
       <div className="section-container">
         <Title class="text-center mb-4 mb-lg-5" heading="Collections" />
         <div className="container">

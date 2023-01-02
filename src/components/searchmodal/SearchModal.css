@@ -1,0 +1,8 @@
+.modal.fade .modal-dialog{
+    max-width: 100%;
+    margin: 0;
+}
+
+.modal-content{
+    border-radius: 0;
+}

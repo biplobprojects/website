@@ -53,7 +53,7 @@ export default function Footer() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="d-inline-block mb-3" to="/privacy-policy">
+                <NavLink className="d-inline-block mb-3" to="/cookie-privacy-policy">
                   Cookie & Privacy Policy
                 </NavLink>
               </li>

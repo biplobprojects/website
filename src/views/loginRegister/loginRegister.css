@@ -1,0 +1,25 @@
+@media screen and (min-width: 769px) {
+  .loginregister-container {
+    max-width: 40%;
+    margin: 0 auto;
+  }
+}
+.loginregister-container {
+  padding: 50px 0;
+}
+.loginregister-container p {
+  color: rgb(207, 26, 26);
+  font-family: poppins;
+  font-size: 14px;
+}
+.loginregister-container a {
+  font-size: 16px;
+  font-family: poppins;
+  color: #121212d9;
+}
+
+.loginregister-container h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #121212bf;
+}
