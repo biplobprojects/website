@@ -1,0 +1,90 @@
+.filter-ofcanvas-container img {
+  width: 20px;
+  height: 20px;
+}
+
+.offcanvas-body h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #121212bf;
+}
+.offcanvas-header {
+  display: block;
+  border-bottom: 0.8px solid rgb(231 229 229);
+}
+.offcanvas-header h5 {
+  font-size: 16px;
+  color: #121212;
+}
+
+.offcanvas-header p {
+  font-size: 14.5px;
+  color: #121212b3;
+  font-weight: 400;
+}
+
+.offcanvas-header .btn-close {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  height: 25px;
+  width: 25px;
+}
+
+.offcanvas-footer {
+  border-top: 0.8px solid rgb(231 229 229);
+  padding: 20px;
+}
+
+.offcanvas-footer button {
+  width: 150px;
+}
+
+.offcanvas-footer .btn-primary {
+  background-color: #fff;
+  color: orange;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+  color: #121212b3;
+  font-size: 16px;
+}
+
+.form-group label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid orange;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.form-group input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 5px;
+  height: 12px;
+  border: solid orange;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

@@ -1,0 +1,10 @@
+.sort-container select{
+    border: none;
+    color: #121212bf;
+    font-size: 14px;
+}
+
+.sort-container label{
+    color: #121212bf;
+    font-size: 14px;
+}

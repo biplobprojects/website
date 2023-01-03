@@ -42,8 +42,7 @@ export default function PrivacyPolicy() {
         referring/exit pages, and date/time stamps. Additionally, when you make
         a purchase or attempt to purchase through the Site, we collect certain
         information from you, including your name, billing address, shipping
-        address, payment information (including credit card numbers [INSERT ANY
-        OTHER PAYMENT TYPES ACCEPTED], email address, and phone number. We refer
+        address, payment information (including credit card numbers, UPI, Wallets, Netbanking), email address, and phone number. We refer
         to this information as “Order Information”.
       </p>
       <p>

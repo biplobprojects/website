@@ -22,10 +22,15 @@ const Navbar = () => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
-
   return (
     <div>
-      {showmodal && <SearchModal classname="search-modal-container" show={handleShow} onhide={handleClose}/>}
+      {showmodal && (
+        <SearchModal
+          classname="search-modal-container"
+          show={handleShow}
+          onhide={handleClose}
+        />
+      )}
       {click && <div className="menu-overlay"></div>}
       <div className={click ? "main-container" : ""} onClick={() => Close()} />
       <nav className="navbar p-0">
@@ -52,6 +57,49 @@ const Navbar = () => {
             <div className="d-flex justify-content-lg-between nav-item-container ">
               <ul className="d-flex mb-0 list-unstyled nav-rt">
                 <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/"
+                    className="nav-links"
+                    onClick={click ? handleClick : null}
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/about-us"
+                    className="nav-links"
+                    onClick={click ? handleClick : null}
+                  >
+                    About Us
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/our-usp"
+                    className="nav-links"
+                    onClick={click ? handleClick : null}
+                  >
+                    Our USP
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/collections/honey"
+                    className="nav-links"
+                    onClick={click ? handleClick : null}
+                  >
+                    Our Products
+                  </NavLink>
+                </li>
+
+                {/* <li className="nav-item">
                   <NavLink
                     exact
                     to="/collections/honey"
@@ -100,7 +148,7 @@ const Navbar = () => {
                   >
                     Immunity & Strength{" "}
                   </NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <NavLink
                     exact
@@ -125,9 +173,11 @@ const Navbar = () => {
 
               <ul className="d-flex mb-0 list-unstyled icon-container nav-lf">
                 <li className="mobile-hidden">
-                  <Link onClick={()=>{
-                    setShowModal(true)
-                  }}>
+                  <Link
+                    onClick={() => {
+                      setShowModal(true);
+                    }}
+                  >
                     <BsSearch />
                   </Link>
                 </li>
