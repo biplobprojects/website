@@ -36,7 +36,6 @@ export default function FilterOfcanvas() {
           </div>
           <div>
           <h3 className="mb-3">Price</h3>
-
           </div>
         </Offcanvas.Body>
 

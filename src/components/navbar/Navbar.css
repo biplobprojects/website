@@ -55,10 +55,10 @@
 .nav-item-container {
   width: 100%;
 }
-.mobile-hidden {
+.navbar .mobile-hidden {
   display: initial !important;
 }
-.mobile-visible {
+.navbar .mobile-visible {
   display: none !important;
 }
 .nav-item-container {
@@ -156,10 +156,10 @@ a.active {
     flex-direction: column;
   }
 
-  .mobile-hidden {
+  .navbar .mobile-hidden {
     display: none !important;
   }
-  .mobile-visible {
+  .navbar .mobile-visible {
     display: initial !important;
   }
   .nav-lf {

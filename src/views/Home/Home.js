@@ -3,10 +3,7 @@ import "./Home.css";
 import Banner from "../../components/banner/Banner";
 import CollectionCards from "../../components/collectionCards/CollectionCards";
 import Title from "../../components/titles/Title";
-import saffron from "../../assets/images/Saffron.jpg";
-import honey from "../../assets/images/honey.jpg";
-import shilajit from "../../assets/images/shilajit.jpg";
-import Vinegar from "../../assets/images/Vinegar.jpg";
+
 import Benefits from "../../assets/images/Benefits.jpg";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
@@ -34,13 +31,9 @@ import honey77 from "../../assets/images/Honey_500g_8.jpg";
 import honey8 from "../../assets/images/Sidr_250g.jpg";
 import honey88 from "../../assets/images/Sidr_500g.jpg";
 import  data  from "../../test.json";
+import CollectionContainer from "../../components/collectionContainer/CollectionContainer";
 export default function Home() {
-  const collectionCardData = [
-    { image: honey, title: "Honey", url: Vinegar },
-    { image: saffron, title: "Saffron" },
-    { image: shilajit, title: "Shilajit" },
-    { image: Vinegar, title: "Vinegar" },
-  ];
+
 console.log(data,"kghikigj")
   const ProductCardData = [
     { image: honey1, url: honey11, title: "Acacia Honey", Price: "340.00" },
@@ -52,7 +45,6 @@ console.log(data,"kghikigj")
     { image: honey7, url: honey77, title: "Sidr Honey", Price: "279.00" },
     { image: honey8, url: honey88, title: "Multiflora Honey", Price: "230.00" },
   ];
-  console.log(collectionCardData.images);
   const reviewData = [
     {
       image: user1,
@@ -77,7 +69,6 @@ console.log(data,"kghikigj")
     },
   ];
 
-  const [collectionData, setCollectionData] = useState(collectionCardData);
   const [review, setReview] = useState(reviewData);
 
   return (
@@ -86,19 +77,7 @@ console.log(data,"kghikigj")
       <div className="section-container">
         <Title class="text-center mb-4 mb-lg-5" heading="Collections" />
         <div className="container">
-          <Row>
-            {collectionCardData.map((e) => {
-              return (
-                <Col md={6} lg={3}>
-                  <CollectionCards
-                    src={e.image}
-                    src2={e.url}
-                    cardTitle={e.title}
-                  />
-                </Col>
-              );
-            })}
-          </Row>
+          <CollectionContainer/>
         </div>
       </div>
 

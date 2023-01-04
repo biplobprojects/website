@@ -19,6 +19,7 @@ import ForgotPassword from "./views/loginRegister/ForgotPassword";
 import PrivacyPolicy from "./views/privacyPolicy/PrivacyPolicy";
 import About from "./views/about/About";
 import USP from "./views/usp/USP";
+import RefundPolicy from "./views/refundPolicy/RefundPolicy";
 function App() {
   return (
     <Routes>
@@ -42,6 +43,7 @@ function App() {
       <Route  path="cookie-privacy-policy" element={<PrivacyPolicy/>}/>
       <Route path="/about-us" element={<About/>}/>
       <Route path="/our-usp" element={<USP/>}/>
+      <Route path='/return-refund-policy' element={<RefundPolicy/>}/>
 
     </Routes>
   );

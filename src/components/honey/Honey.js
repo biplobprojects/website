@@ -17,6 +17,8 @@ import Propolis from "../../assets/images/Propolis.webp";
 import Products from "../products/Products";
 import FilterOfcanvas from "../filterofcanvas/FilterOfcanvas";
 import SortData from "../sortdata/SortData";
+import FilterSort from "../FilterSort/FilterSort";
+import CollectionContainer from "../collectionContainer/CollectionContainer";
 export default function Honey() {
   const ProductCardData = [
     {
@@ -26,6 +28,7 @@ export default function Honey() {
       title: "Acacia Honey",
       Price: 340.0,
       date: "Mon Oct 31 2020 00:00:00 GMT-0700 (PDT)",
+      instock: true,
     },
     {
       bestseller: true,
@@ -34,6 +37,8 @@ export default function Honey() {
       title: "Jammun Honey",
       Price: 269.0,
       date: "Wed Oct 31 2019 00:00:00 GMT-0700 (PDT)",
+      instock: false,
+
     },
     {
       bestseller: true,
@@ -42,6 +47,8 @@ export default function Honey() {
       title: "Wild Honey",
       Price: 330.0,
       date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -50,6 +57,8 @@ export default function Honey() {
       title: "Litchi Honey",
       Price: 249.0,
       date: "Mon Oct 31 2022 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -58,6 +67,8 @@ export default function Honey() {
       title: "Tulsi Honey",
       Price: 349.0,
       date: "Mon Nov 31 2022 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -66,6 +77,8 @@ export default function Honey() {
       title: "Neem Honey",
       Price: 349.0,
       date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -74,6 +87,8 @@ export default function Honey() {
       title: "Sidr Honey",
       Price: 279.0,
       date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -82,6 +97,8 @@ export default function Honey() {
       title: "Multiflora Honey",
       Price: 230.0,
       date: "Fri Oct 31 2017 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -90,6 +107,8 @@ export default function Honey() {
       title: "Comb Honey",
       Price: 649.0,
       date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -98,6 +117,8 @@ export default function Honey() {
       title: "Bee Wax",
       Price: 450.0,
       date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
+      instock: true,
+
     },
     {
       bestseller: true,
@@ -106,6 +127,8 @@ export default function Honey() {
       title: "Bee Pollen",
       Price: 230.0,
       date: "Fri Oct 31 2022 00:00:00 GMT-0700 (PDT)",
+      instock: false,
+
     },
     {
       bestseller: true,
@@ -114,13 +137,17 @@ export default function Honey() {
       title: "Propolis",
       Price: 1299.0,
       date: "Mon Dec 30 2018 00:00:00 GMT-0700 (PDT)",
+      instock: false,
+
     },
   ];
 
   return (
     <div className="container collection-container">
-      <Title heading="Honey" class="mb-3" />
-      <FilterOfcanvas/>
+      <Title heading="Collections" class="mb-4"/>
+      <CollectionContainer/>
+   <Title heading="Honey" class="mb-5 mt-4" />
+    {/*<FilterOfcanvas/> */}
       {/* <Row>
         <Col md={3}>
           <FilterOfcanvas />
@@ -132,7 +159,9 @@ export default function Honey() {
           <h5>Products</h5>
         </Col>
       </Row> */}
-          <SortData state={ProductCardData} />
+          {/* <SortData state={ProductCardData} /> */}
+
+          <FilterSort obj={ProductCardData}/>
 
       
     </div>

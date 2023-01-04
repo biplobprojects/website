@@ -45,7 +45,7 @@
   color: orange;
 }
 
-.form-group input {
+/* .form-group input {
   padding: 0;
   height: initial;
   width: initial;
@@ -87,4 +87,4 @@
   border: solid orange;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-}
+} */

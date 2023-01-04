@@ -58,7 +58,7 @@ export default function Footer() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="d-inline-block mb-3" to="/refund-policy">
+                <NavLink className="d-inline-block mb-3" to="/return-refund-policy">
                   Return & Refund Policy
                 </NavLink>
               </li>

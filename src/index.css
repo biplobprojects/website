@@ -37,6 +37,7 @@ body {
 }
 .page-container a {
   color: #121212bf !important;
+  text-decoration: underline !important;
 }
 
 

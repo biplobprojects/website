@@ -31,8 +31,13 @@
 .card-container h5{
   font-family: Mariposa-sans !important;
   font-size: 22px;
+  color: #121212bf;
 }
 
+ a{
+  text-decoration: none !important;
+
+}
 
 @media screen and (max-width:769px) {
   .card-container h5{
