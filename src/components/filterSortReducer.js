@@ -4,12 +4,14 @@ export const reducer = (state, action) => {
       return { ...state, sortBy: action.payload };
     case "FILTER":
       switch (action.payload) {
-        case "showEntireInventory":
-          return { ...state, showEntireInventory: !state.showEntireInventory };
-        case "showFastDeliveryOnly":
+     case "RemoveFilter":
+      return {...state }
+        case "InStock":
+          return { ...state, InStock: !state.InStock };
+        case "OutStock":
           return {
             ...state,
-            showFastDeliveryOnly: !state.showFastDeliveryOnly
+            OutStock: !state.OutStock
           };
         default:
           console.log("inner switch is acting up...");

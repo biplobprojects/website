@@ -1,8 +1,8 @@
-const getDeliveryFilteredData = (prodArr, showFastDelivery) => {
-  switch (showFastDelivery) {
+const OutStockProduct = (prodArr, OutStock) => {
+  switch (OutStock) {
     case true:
       const bufferArr = [...prodArr];
-      return bufferArr.filter((item) => item.delivery === "fast");
+      return bufferArr.filter((item) => item.instock == false);
     case false:
       return prodArr;
     default:
@@ -12,15 +12,15 @@ const getDeliveryFilteredData = (prodArr, showFastDelivery) => {
 };
 export const getFilteredData = (
   prodArr,
-  showEntireInventory,
-  showFastDelivery
+  OutStock,
+  InStock
 ) => {
-  const bufferArr = getDeliveryFilteredData(prodArr, showFastDelivery);
-  switch (showEntireInventory) {
+  const bufferArr = OutStockProduct(prodArr, OutStock);
+  switch (InStock) {
     case true:
-      return bufferArr;
+      return bufferArr.filter((item) => item.instock == true);
     case false:
-      return bufferArr.filter((item) => item.inStock == true);
+      return bufferArr;
     default:
       break;
   }

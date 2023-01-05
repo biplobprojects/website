@@ -37,7 +37,7 @@ export default function Footer() {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="mb-3 d-inline-block" to="/shop-all">
+                <NavLink className="mb-3 d-inline-block" to="/collections/all">
                   Shop All
                 </NavLink>
               </li>
@@ -68,14 +68,14 @@ export default function Footer() {
           <Col md={4}>
             <h3 className="mb-4">Support Information</h3>
             <p className="mb-1">
-              <strong>Address:</strong>{" "}
+              <strong>Address:</strong>
             </p>
             <p className="mb-4">
               Ground Floor E4/325, Thoker No.6, Abufazal enclave part -2, High
               tension line, Shaheen Bagh, Jamia Nagar Okhla New Delhi - 110025
             </p>
             <p className="mb-1">
-              <strong>Customer Care:</strong>{" "}
+              <strong>Customer Care:</strong>
             </p>
             <p className="mb-4">
               <a className="d-inline-block me-2" href="tel:+91-9717199172">

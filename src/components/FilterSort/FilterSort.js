@@ -14,18 +14,13 @@ export default function FilterSort(props) {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [{ sortBy, showEntireInventory, showFastDeliveryOnly }, dispatch] =
-    useReducer(reducer, {
-      sortBy: "none",
-      showEntireInventory: false,
-      showFastDeliveryOnly: false,
-    });
+  const [{ sortBy, InStock, OutStock }, dispatch] = useReducer(reducer, {
+    sortBy: "none",
+    InStock: false,
+    OutStock: false,
+  });
   const sortedData = getSortedData([...props.obj], sortBy);
-  const filteredData = getFilteredData(
-    sortedData,
-    showEntireInventory,
-    showFastDeliveryOnly
-  );
+  const filteredData = getFilteredData(sortedData, InStock, OutStock);
 
   const sorting = (event) => {
     let userValue = event.target.value;
@@ -66,10 +61,10 @@ export default function FilterSort(props) {
                         onChange={() =>
                           dispatch({
                             type: "FILTER",
-                            payload: "showEntireInventory",
+                            payload: "InStock",
                           })
                         }
-                        checked={showEntireInventory}
+                        checked={InStock}
                       />
                       In stock (12)
                     </label>
@@ -82,17 +77,27 @@ export default function FilterSort(props) {
                         onChange={() =>
                           dispatch({
                             type: "FILTER",
-                            payload: "showFastDeliveryOnly",
+                            payload: "OutStock",
                           })
                         }
-                        checked={showFastDeliveryOnly}
+                        checked={OutStock}
                       />
-                      Out of stock (0){" "}
+                      Out of stock (0)
                     </label>
                   </div>
                 </div>
                 <div>
                   <h3 className="mb-3">Price</h3>
+
+                  <input
+                    className="d-block mb-4"
+                    type="range"
+                    name="price"
+                    min="10"
+                    max="100"
+                    value="100"
+                    // onChange={updateFilterValue}
+                  />
                 </div>
                 <div className="mobile-visible">
                   <label className=" me-4 ">Sort by :</label>
@@ -114,7 +119,17 @@ export default function FilterSort(props) {
               </Offcanvas.Body>
 
               <div className="offcanvas-footer d-flex justify-content-between">
-                <button className="btn-primary"> Remove all </button>
+                <button
+                  className="btn-primary"
+                  onClick={() =>
+                    dispatch({
+                      type: "FILTER",
+                      payload: "RemoveFilter",
+                    })
+                  }
+                >
+                  Remove all
+                </button>
                 <button> Apply </button>
               </div>
             </Offcanvas>

@@ -10,6 +10,7 @@
 body {
   font-family: poppins !important;
   background-color: transparent;
+  overflow-x: hidden;
 }
 .container {
   max-width: 95% !important;

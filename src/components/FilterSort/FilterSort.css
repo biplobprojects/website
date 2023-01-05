@@ -63,4 +63,35 @@ input[type=checkbox] {
      .mobile-visible {
         display: initial !important;
       }
+      .offcanvas-footer button{
+        width:140px;
+      }
   }
+
+  input[type=range]{
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 50%;
+    height: 8px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+    display: block;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: orange;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+

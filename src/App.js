@@ -20,11 +20,14 @@ import PrivacyPolicy from "./views/privacyPolicy/PrivacyPolicy";
 import About from "./views/about/About";
 import USP from "./views/usp/USP";
 import RefundPolicy from "./views/refundPolicy/RefundPolicy";
+import AllProducts from "./components/allProducts/AllProducts";
+import AccaciaHoney from "./views/accacia-honey/AccaciaHoney";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/collections" element={<Collection />}>
+        <Route path= "all" element = {<AllProducts/>}/>
         <Route path="honey" element={<Honey />} />
         <Route path="saffron" element={<SaffronProduct />} />
         <Route path="shilajit" element={<ShilajitProduct />} />
@@ -44,7 +47,7 @@ function App() {
       <Route path="/about-us" element={<About/>}/>
       <Route path="/our-usp" element={<USP/>}/>
       <Route path='/return-refund-policy' element={<RefundPolicy/>}/>
-
+      <Route path="/accacia-honey" element ={<AccaciaHoney/>}/>
     </Routes>
   );
 }
