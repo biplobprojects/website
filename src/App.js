@@ -21,13 +21,17 @@ import About from "./views/about/About";
 import USP from "./views/usp/USP";
 import RefundPolicy from "./views/refundPolicy/RefundPolicy";
 import AllProducts from "./components/allProducts/AllProducts";
-import AccaciaHoney from "./views/accacia-honey/AccaciaHoney";
+import AccaciaHoney from "./views/honey/AccaciaHoney";
+import JamunHoney from "./views/honey/JamunHoney";
+import WildHoney from "./views/honey/WildHoney";
+import LitchiHoney from "./views/honey/LitchiHoney";
+import TulsiHoney from "./views/honey/TulsiHoney";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/collections" element={<Collection />}>
-        <Route path= "all" element = {<AllProducts/>}/>
+        <Route path="all" element={<AllProducts />} />
         <Route path="honey" element={<Honey />} />
         <Route path="saffron" element={<SaffronProduct />} />
         <Route path="shilajit" element={<ShilajitProduct />} />
@@ -40,14 +44,19 @@ function App() {
       <Route path="/terms-conditions" element={<TermsCondition />} />
       <Route path="/account">
         <Route path="/account/register" element={<Registration />} />
-        <Route index path="/account/login" element={<Login/>} />
-        <Route  path="/account/recover" element={<ForgotPassword/>} />
+        <Route index path="/account/login" element={<Login />} />
+        <Route path="/account/recover" element={<ForgotPassword />} />
       </Route>
-      <Route  path="cookie-privacy-policy" element={<PrivacyPolicy/>}/>
-      <Route path="/about-us" element={<About/>}/>
-      <Route path="/our-usp" element={<USP/>}/>
-      <Route path='/return-refund-policy' element={<RefundPolicy/>}/>
-      <Route path="/accacia-honey" element ={<AccaciaHoney/>}/>
+      <Route path="cookie-privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/about-us" element={<About />} />
+      <Route path="/our-usp" element={<USP />} />
+      <Route path="/return-refund-policy" element={<RefundPolicy />} />
+      <Route path="/accacia-honey" element={<AccaciaHoney />} />
+      <Route path="/jamun-honey" element={<JamunHoney />} />
+      <Route path = "/wild-honey" element={<WildHoney/>}/>
+      <Route path="/litchi-honey" element={<LitchiHoney/>}/>
+      <Route path="/tulsi-honey" element={<TulsiHoney/>}/>
+
     </Routes>
   );
 }

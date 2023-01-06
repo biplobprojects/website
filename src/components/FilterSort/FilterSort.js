@@ -159,13 +159,14 @@ export default function FilterSort(props) {
         </Col>
       </Row>
       <Row>
-        {filteredData.map(({ image, url, title, Price }) => (
+        {filteredData.map(({ image, url, title, Price,path }) => (
           <Col md={6} lg={3} sm={6} xs={6}>
             <Products
               src={image}
               src1={url}
               produtName={title}
               productPrice={Price}
+              path={path}
             />
           </Col>
         ))}

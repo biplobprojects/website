@@ -25,6 +25,7 @@ export const AllProductsData = [
     date: "Mon Oct 31 2020 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:"/accacia-honey"
   },
   {
     bestseller: true,
@@ -46,6 +47,7 @@ export const AllProductsData = [
     date: "Wed Oct 31 2019 00:00:00 GMT-0700 (PDT)",
     instock: false,
     honey: true,
+    path:'/jamun-honey'
   },
   {
     bestseller: true,
@@ -56,6 +58,8 @@ export const AllProductsData = [
     date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/wild-honey'
+
   },
   {
     bestseller: true,
@@ -76,6 +80,8 @@ export const AllProductsData = [
     date: "Mon Oct 31 2022 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/litchi-honey'
+
   },
   {
     bestseller: true,
@@ -86,6 +92,8 @@ export const AllProductsData = [
     date: "Mon Nov 31 2022 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/tulsi-honey'
+
   },
   {
     bestseller: true,
@@ -96,6 +104,7 @@ export const AllProductsData = [
     date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/neem-honey'
   },
   {
     bestseller: true,
@@ -106,6 +115,8 @@ export const AllProductsData = [
     date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/sidr-honey'
+
   },
   {
     bestseller: true,
@@ -116,6 +127,8 @@ export const AllProductsData = [
     date: "Fri Oct 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/multiflora-honey'
+
   },
   {
     bestseller: true,
@@ -126,6 +139,8 @@ export const AllProductsData = [
     date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    path:'/comb-honey'
+
   },
   {
     bestseller: true,
