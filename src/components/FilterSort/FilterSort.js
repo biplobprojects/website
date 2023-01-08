@@ -11,16 +11,44 @@ import FilterIcon from "../../assets/images/settings-sliders.png";
 import "./FilterSort.css";
 
 export default function FilterSort(props) {
+  const [value, setValue] = useState(0);
+const MAX = 10;
+const getBackgroundSize = () => {
+	return {
+		backgroundSize: `${(value * 100) / MAX}% 100%`,
+	};
+};
+const arrayData = [...props.obj];
   const [show, setShow] = useState(false);
+  const [priceRange,setPriceRange] = useState({from:50, to:250})
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [{ sortBy, InStock, OutStock }, dispatch] = useReducer(reducer, {
+  const [{ sortBy }, dispatch] = useReducer(reducer, {
     sortBy: "none",
     InStock: false,
     OutStock: false,
   });
+  const [OutStock, setOutStock] = useState(false);
+  const [InStock, setInStock] = useState(false);
+  // const[highestPrice, setHighestPrice] = useState();
+
   const sortedData = getSortedData([...props.obj], sortBy);
   const filteredData = getFilteredData(sortedData, InStock, OutStock);
+  // const [star, set] = useState();
+  // const [end, set] = useState();
+    // const [newRea, setnewArray] = useState([]);
+
+  // const filteredData = filteredData1.filter((product) => {
+  //   console.log(product.Price > priceRange.from && product.Price < priceRange.to," bvbbbbbbbbbb",product.Price,priceRange.from)
+  //   return product.Price > priceRange.from && product.Price < priceRange.to
+  // })
+    let AllPrice = arrayData.map(e=>{
+      return e.Price
+    });
+   let highestPrice = Math.max.apply(null,AllPrice)
+
+  console.log(filteredData," mmmmmmmmmmmmm")
+
 
   const sorting = (event) => {
     let userValue = event.target.value;
@@ -59,10 +87,7 @@ export default function FilterSort(props) {
                         type="checkbox"
                         name="filter"
                         onChange={() =>
-                          dispatch({
-                            type: "FILTER",
-                            payload: "InStock",
-                          })
+                          setInStock(!InStock)
                         }
                         checked={InStock}
                       />
@@ -75,10 +100,7 @@ export default function FilterSort(props) {
                         type="checkbox"
                         name="filter"
                         onChange={() =>
-                          dispatch({
-                            type: "FILTER",
-                            payload: "OutStock",
-                          })
+                          setOutStock(!OutStock)
                         }
                         checked={OutStock}
                       />
@@ -88,7 +110,9 @@ export default function FilterSort(props) {
                 </div>
                 <div>
                   <h3 className="mb-3">Price</h3>
-
+<p>
+{highestPrice}
+</p>
                   <input
                     className="d-block mb-4"
                     type="range"

@@ -11,14 +11,25 @@ const initialValues = {
   email: "",
   password: "",
 };
+
 export default function Login() {
   const { values, touched, handleChange, errors, handleSubmit } = useFormik({
     initialValues: initialValues,
     validationSchema: contactSchema,
     onSubmit: (values) => {
       //   navigate('/')
+    //   if(values.email == TEST ){
+    //     localStorage.setItem('Name', 'TEST');
+    //     localStrorage.setItem('id',"123");
+
+    // }
     },
   });
+  
+
+  // let id = localStorage.getitem("id");
+  // setloginsuccess(id);l
+
   return (
     <div className="loginregister-container">
       <Title class="text-center mb-4" heading="Login" />
