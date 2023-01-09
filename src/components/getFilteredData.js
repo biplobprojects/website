@@ -1,27 +1,36 @@
-const OutStockProduct = (prodArr, OutStock) => {
-  switch (OutStock) {
-    case true:
-      const bufferArr = [...prodArr];
-      return bufferArr.filter((item) => item.instock == false);
-    case false:
-      return prodArr;
-    default:
-      console.log("delivery filter is broken...");
-      break;
-  }
-};
 export const getFilteredData = (
   prodArr,
+  InStock,
   OutStock,
-  InStock
+  startPrice,
+  endPrice,
+  priceRange
 ) => {
-  const bufferArr = OutStockProduct(prodArr, OutStock);
-  switch (InStock) {
-    case true:
-      return bufferArr.filter((item) => item.instock == true);
-    case false:
-      return bufferArr;
-    default:
-      break;
+  let priceArray = prodArr.filter((product) => {
+    return product.Price;
+  });
+
+  let priceRangeArray = priceArray.filter((e) => {
+    return e.Price >= startPrice && e.Price <= endPrice;
+  });
+  let filteredArr = prodArr.filter((product) => {
+    if ((OutStock && InStock) || (!OutStock && !InStock)) {
+      return product;
+    }
+    if (OutStock) {
+      return product.instock == false;
+    }
+    if (InStock) {
+      return product.instock == true;
+    }
+  });
+
+  if (priceRangeArray.length) {
+    let filteredPriceArray = filteredArr.filter(function (e) {
+      return priceRangeArray.indexOf(e) > -1;
+    });
+    return filteredPriceArray;
+  } else {
+    return filteredArr;
   }
 };

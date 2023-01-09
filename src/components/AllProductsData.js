@@ -14,6 +14,8 @@ import saffron from "../assets/images/Saffron_1.webp";
 import vinegar1 from "../assets/images/Vinegar_01.webp";
 import vinegar2 from "../assets/images/Vinegar_02.webp";
 import shilajit from "../assets/images/Shilajit.webp";
+import { GrIndicator } from "react-icons/gr";
+import QR from "../assets/images/QR-Code-PNG-Picture.png"
 
 export const AllProductsData = [
   {
@@ -25,7 +27,15 @@ export const AllProductsData = [
     date: "Mon Oct 31 2020 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:"/accacia-honey"
+    path:"/accacia-honey",
+    count:70,
+    origin:"India",
+    discountedPrice: 300,
+    url:"https://reactjs.org/",
+    likes:29,
+    qr:QR
+
+
   },
   {
     bestseller: true,
@@ -36,6 +46,13 @@ export const AllProductsData = [
     date: "Mon Dec 30 2018 00:00:00 GMT-0700 (PDT)",
     instock: false,
     saffron: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
 
   {
@@ -47,7 +64,14 @@ export const AllProductsData = [
     date: "Wed Oct 31 2019 00:00:00 GMT-0700 (PDT)",
     instock: false,
     honey: true,
-    path:'/jamun-honey'
+    path:'/jamun-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -58,7 +82,13 @@ export const AllProductsData = [
     date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/wild-honey'
+    path:'/wild-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -69,7 +99,13 @@ export const AllProductsData = [
     Price: 290.0,
     date: "Mon Dec 30 2018 00:00:00 GMT-0700 (PDT)",
     instock: false,
-    vinegar: true,
+    vinegar: true, count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -80,7 +116,13 @@ export const AllProductsData = [
     date: "Mon Oct 31 2022 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/litchi-honey'
+    path:'/litchi-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -92,7 +134,13 @@ export const AllProductsData = [
     date: "Mon Nov 31 2022 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/tulsi-honey'
+    path:'/tulsi-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -104,7 +152,14 @@ export const AllProductsData = [
     date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/neem-honey'
+    path:'/neem-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -115,7 +170,13 @@ export const AllProductsData = [
     date: "Mon Mar 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/sidr-honey'
+    path:'/sidr-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -127,7 +188,13 @@ export const AllProductsData = [
     date: "Fri Oct 31 2017 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/multiflora-honey'
+    path:'/multiflora-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -139,7 +206,13 @@ export const AllProductsData = [
     date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
-    path:'/comb-honey'
+    path:'/comb-honey',
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
 
   },
   {
@@ -151,6 +224,13 @@ export const AllProductsData = [
     date: "Mon Oct 31 2016 00:00:00 GMT-0700 (PDT)",
     instock: true,
     honey: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -161,6 +241,13 @@ export const AllProductsData = [
     date: "Fri Oct 31 2022 00:00:00 GMT-0700 (PDT)",
     instock: false,
     honey: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -171,6 +258,13 @@ export const AllProductsData = [
     date: "Mon Dec 30 2018 00:00:00 GMT-0700 (PDT)",
     instock: false,
     honey: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
 
   {
@@ -182,6 +276,13 @@ export const AllProductsData = [
     date: "Mon Dec 30 2022 00:00:00 GMT-0700 (PDT)",
     instock: false,
     vinegar: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
   {
     bestseller: true,
@@ -192,5 +293,12 @@ export const AllProductsData = [
     date: "Tue Dec 30 2018 00:00:00 GMT-0700 (PDT)",
     instock: false,
     shilajit: true,
+    count:100,
+    origin:"India",
+    discountedPrice: 320,
+    url:"https://reactjs.org/",
+    likes:79,
+    qr:QR
+
   },
 ];

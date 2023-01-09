@@ -9,18 +9,63 @@ import Row from "react-bootstrap/esm/Row";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import FilterIcon from "../../assets/images/settings-sliders.png";
 import "./FilterSort.css";
-
+import InputField from "../Inputfields/InputField";
+import { GrFormClose } from "react-icons/gr";
 export default function FilterSort(props) {
+  const [value, setValue] = useState(0);
+  const MAX = 10;
+  const getBackgroundSize = () => {
+    return {
+      backgroundSize: `${(value * 100) / MAX}% 100%`,
+    };
+  };
+  const arrayData = [...props.obj];
   const [show, setShow] = useState(false);
+  // const [priceRange, setPriceRange] = useState({ from: 50, to: 250 });
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [{ sortBy, InStock, OutStock }, dispatch] = useReducer(reducer, {
+  const [{ sortBy }, dispatch] = useReducer(reducer, {
     sortBy: "none",
     InStock: false,
     OutStock: false,
   });
+  const [OutStock, setOutStock] = useState(false);
+  const [InStock, setInStock] = useState(false);
+  const [priceRange, setPriceRange] = useState();
+  const [startPrice, setStartPrice] = useState();
+  const [endPrice, setEndPrice] = useState();
   const sortedData = getSortedData([...props.obj], sortBy);
-  const filteredData = getFilteredData(sortedData, InStock, OutStock);
+  const filteredData = getFilteredData(
+    sortedData,
+    InStock,
+    OutStock,
+    startPrice,
+    endPrice,
+    priceRange
+  );
+
+  const removeFilterHandler = () => {
+    setStartPrice(false);
+    setEndPrice(false);
+    setOutStock(false);
+    setInStock(false);
+    handleClose();
+  };
+  // const filteredData = filteredData1.filter((e) => {
+  //   return e.Price >= startPrice && e.Price <= endPrice;
+  // });
+  // filteredData3.includes(filteredData)
+
+  // filteredData.push[filteredData3];
+  // console.log(filteredData3)
+  // if(filteredData3.length){
+  //   filteredData.push(filteredData3)
+
+  // }
+  let AllPrice = arrayData.map((e) => {
+    return e.Price;
+  });
+  let highestPrice = Math.max.apply(null, AllPrice);
 
   const sorting = (event) => {
     let userValue = event.target.value;
@@ -29,11 +74,11 @@ export default function FilterSort(props) {
   return (
     <div className="filter-sort-container">
       <Row className="justify-content-between align-items-center mb-5">
-        <Col sm={5} xs={6} md={6}>
+        <Col sm={5} xs={6} md={4}>
           <div className="filter-ofcanvas-container">
             <a variant="primary" onClick={handleShow}>
               <h6 className="mb-0">
-                <img src={FilterIcon} className="me-1" /> Filter{" "}
+                <img src={FilterIcon} className="me-1" /> Filter
                 <span className=" d-inline-block mobile-visible">and Sort</span>
               </h6>
             </a>
@@ -42,7 +87,7 @@ export default function FilterSort(props) {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title>
                   <h5 className="text-center mb-2">
-                    Filter{" "}
+                    Filter
                     <span className="mobile-visible d-inline-block">
                       and Sort
                     </span>
@@ -58,15 +103,10 @@ export default function FilterSort(props) {
                       <input
                         type="checkbox"
                         name="filter"
-                        onChange={() =>
-                          dispatch({
-                            type: "FILTER",
-                            payload: "InStock",
-                          })
-                        }
+                        onChange={() => setInStock(!InStock)}
                         checked={InStock}
                       />
-                      In stock (12)
+                      In stock
                     </label>
                   </div>
                   <div>
@@ -74,30 +114,45 @@ export default function FilterSort(props) {
                       <input
                         type="checkbox"
                         name="filter"
-                        onChange={() =>
-                          dispatch({
-                            type: "FILTER",
-                            payload: "OutStock",
-                          })
-                        }
+                        onChange={() => setOutStock(!OutStock)}
                         checked={OutStock}
                       />
-                      Out of stock (0)
+                      Out of stock
                     </label>
                   </div>
                 </div>
-                <div>
+                <div className="price-filter-container mb-4">
                   <h3 className="mb-3">Price</h3>
+                  <p className="higestPrice">
+                    The highest price is Rs. {highestPrice}
+                  </p>
+                  <Row>
+                    <Col md={4} xs={6}>
+                    <span>₹</span>  <input
+                      placeholder="From"
+                        htmlFor="from"
+                        type="number"
+                        id="from"
+                        value={startPrice}
+                        onChange={(e) => {
+                          setStartPrice(e.target.value);
+                        }}
+                      />
+                    </Col>
 
-                  <input
-                    className="d-block mb-4"
-                    type="range"
-                    name="price"
-                    min="10"
-                    max="100"
-                    value="100"
-                    // onChange={updateFilterValue}
-                  />
+                    <Col md={4} xs={6}>
+                    <span>₹</span>  <input
+                        htmlFor="to"
+                        type="number"
+                        id="to"
+                        placeholder="To"
+                        value={endPrice}
+                        onChange={(e) => {
+                          setEndPrice(e.target.value);
+                        }}
+                      />
+                    </Col>
+                  </Row>
                 </div>
                 <div className="mobile-visible">
                   <label className=" me-4 ">Sort by :</label>
@@ -119,25 +174,17 @@ export default function FilterSort(props) {
               </Offcanvas.Body>
 
               <div className="offcanvas-footer d-flex justify-content-between">
-                <button
-                  className="btn-primary"
-                  onClick={() =>
-                    dispatch({
-                      type: "FILTER",
-                      payload: "RemoveFilter",
-                    })
-                  }
-                >
+                <button className="btn-primary" onClick={removeFilterHandler}>
                   Remove all
                 </button>
-                <button> Apply </button>
+                <button onClick={handleClose}> Apply </button>
               </div>
             </Offcanvas>
           </div>
         </Col>
         <Col
           lg={4}
-          md={6}
+          md={8}
           sm={3}
           xs={6}
           className="d-flex justify-content-end align-items-center"
@@ -155,18 +202,75 @@ export default function FilterSort(props) {
               <option value="DATE_NEW_TO_OLD">Date, New to Old</option>
             </select>
           </div>
-          <h6 className="mb-0">{sortedData.length} Products</h6>
+          <h6 className="mb-0">{filteredData.length} Products</h6>
         </Col>
       </Row>
+      <div className="mb-3">
+      {startPrice && endPrice && (
+        <p className="d-inline-block pricerange-container me-2">
+          Rs. {startPrice} - Rs. {endPrice}{" "}
+          <span
+            className="d-inline-block ms-2"
+            onClick={() => {
+              setStartPrice(false);
+              setEndPrice(false);
+            }}
+          >
+            <GrFormClose />
+          </span>
+        </p>
+      )}
+
+      {InStock && (
+        <p className=" me-2 d-inline-block pricerange-container">
+          Availability: In stock
+          <span
+            className="d-inline-block ms-2"
+            onClick={() => {
+              setInStock(false);
+            }}
+          >
+            <GrFormClose />
+          </span>
+        </p>
+      )}
+
+      {OutStock && (
+        <p className="me-2 d-inline-block pricerange-container">
+          Availability: Out Stock
+          <span
+            className="d-inline-block ms-2"
+            onClick={() => {
+              setOutStock(false);
+            }}
+          >
+            <GrFormClose />
+          </span>
+        </p>
+      )}
+      {((startPrice && endPrice) || InStock || OutStock) && (
+        <p
+          className="d-inline-block remove-all-btn"
+          onClick={removeFilterHandler}
+        >
+          Remove All
+        </p>
+      )}
+</div>
       <Row>
-        {filteredData.map(({ image, url, title, Price,path }) => (
-          <Col md={6} lg={3} sm={6} xs={6}>
+        {filteredData.map(({ image, title, Price,origin,count,discountedPrice,href,likes,qr,url }) => (
+          <Col md={12} lg={6} sm={12} xs={12} >
             <Products
               src={image}
               src1={url}
               produtName={title}
+              discount ={discountedPrice}
               productPrice={Price}
-              path={path}
+              origin = {origin}
+              url ={url}
+              count = {count}
+              qr= {qr}
+              likes={likes}
             />
           </Col>
         ))}

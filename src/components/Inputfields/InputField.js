@@ -4,7 +4,7 @@ export default function InputField(props) {
   return (
  
 <div className="input-container">
-                <label className={props.value && 'filled'} htmlFor={props.htmlFor}>
+                <label className={props.value && 'filled'} htmlFor={props.htmlFor} id={props.idval}>
                   {props.label}
                 </label>
                 <input
@@ -15,6 +15,7 @@ export default function InputField(props) {
                   value={props.value}
                   onChange={props.onChange}
                   onBlur={props.Blur}
+                  className= {props.class}
                 />
               </div>
          

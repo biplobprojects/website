@@ -14,7 +14,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
   .input-container:focus-within label {
-    transform: translate(0, 12px) scale(0.8);
+    transform: translate(0, 12px) scale(0.8) ;
     color:  #1a1a1a
     ;
   }
