@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
 import Banner from "../../components/banner/Banner";
-import CollectionCards from "../../components/collectionCards/CollectionCards";
 import Title from "../../components/titles/Title";
 
 import Benefits from "../../assets/images/Benefits.jpg";

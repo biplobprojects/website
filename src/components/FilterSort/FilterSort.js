@@ -20,6 +20,7 @@ export default function FilterSort(props) {
     };
   };
   const arrayData = [...props.obj];
+
   const [show, setShow] = useState(false);
   // const [priceRange, setPriceRange] = useState({ from: 50, to: 250 });
   const handleClose = () => setShow(false);
@@ -128,8 +129,9 @@ export default function FilterSort(props) {
                   </p>
                   <Row>
                     <Col md={4} xs={6}>
-                    <span>₹</span>  <input
-                      placeholder="From"
+                      <span>₹</span>{" "}
+                      <input
+                        placeholder="From"
                         htmlFor="from"
                         type="number"
                         id="from"
@@ -141,7 +143,8 @@ export default function FilterSort(props) {
                     </Col>
 
                     <Col md={4} xs={6}>
-                    <span>₹</span>  <input
+                      <span>₹</span>{" "}
+                      <input
                         htmlFor="to"
                         type="number"
                         id="to"
@@ -206,74 +209,87 @@ export default function FilterSort(props) {
         </Col>
       </Row>
       <div className="mb-3">
-      {startPrice && endPrice && (
-        <p className="d-inline-block pricerange-container me-2">
-          Rs. {startPrice} - Rs. {endPrice}{" "}
-          <span
-            className="d-inline-block ms-2"
-            onClick={() => {
-              setStartPrice(false);
-              setEndPrice(false);
-            }}
-          >
-            <GrFormClose />
-          </span>
-        </p>
-      )}
+        {startPrice && endPrice && (
+          <p className="d-inline-block pricerange-container me-2">
+            Rs. {startPrice} - Rs. {endPrice}{" "}
+            <span
+              className="d-inline-block ms-2"
+              onClick={() => {
+                setStartPrice(false);
+                setEndPrice(false);
+              }}
+            >
+              <GrFormClose />
+            </span>
+          </p>
+        )}
 
-      {InStock && (
-        <p className=" me-2 d-inline-block pricerange-container">
-          Availability: In stock
-          <span
-            className="d-inline-block ms-2"
-            onClick={() => {
-              setInStock(false);
-            }}
-          >
-            <GrFormClose />
-          </span>
-        </p>
-      )}
+        {InStock && (
+          <p className=" me-2 d-inline-block pricerange-container">
+            Availability: In stock
+            <span
+              className="d-inline-block ms-2"
+              onClick={() => {
+                setInStock(false);
+              }}
+            >
+              <GrFormClose />
+            </span>
+          </p>
+        )}
 
-      {OutStock && (
-        <p className="me-2 d-inline-block pricerange-container">
-          Availability: Out Stock
-          <span
-            className="d-inline-block ms-2"
-            onClick={() => {
-              setOutStock(false);
-            }}
+        {OutStock && (
+          <p className="me-2 d-inline-block pricerange-container">
+            Availability: Out Stock
+            <span
+              className="d-inline-block ms-2"
+              onClick={() => {
+                setOutStock(false);
+              }}
+            >
+              <GrFormClose />
+            </span>
+          </p>
+        )}
+        {((startPrice && endPrice) || InStock || OutStock) && (
+          <p
+            className="d-inline-block remove-all-btn"
+            onClick={removeFilterHandler}
           >
-            <GrFormClose />
-          </span>
-        </p>
-      )}
-      {((startPrice && endPrice) || InStock || OutStock) && (
-        <p
-          className="d-inline-block remove-all-btn"
-          onClick={removeFilterHandler}
-        >
-          Remove All
-        </p>
-      )}
-</div>
+            Remove All
+          </p>
+        )}
+      </div>
       <Row>
-        {filteredData.map(({ image, title, Price,origin,count,discountedPrice,href,likes,qr,url }) => (
-          <Col md={12} lg={6} sm={12} xs={12} >
-            <Products
-              src={image}
-              src1={url}
-              produtName={title}
-              discount ={discountedPrice}
-              productPrice={Price}
-              origin = {origin}
-              url ={url}
-              count = {count}
-              qr= {qr}
-              likes={likes}
-            />
-          </Col>
-        ))}
+        {filteredData.map(
+          ({
+            image,
+            title,
+            Price,
+            origin,
+            count,
+            discountedPrice,
+            href,
+            likes,
+            qr,
+            url,
+          }) => (
+            <Col md={12} lg={6} sm={12} xs={12}>
+              <Products
+                src={image}
+                src1={url}
+                produtName={title}
+                discount={discountedPrice}
+                productPrice={Price}
+                origin={origin}
+                url={url}
+                count={count}
+                qr={qr}
+                likes={likes}
+              />
+            </Col>
+          )
+        )}
       </Row>
     </div>
   );

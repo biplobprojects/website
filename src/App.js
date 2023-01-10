@@ -26,6 +26,7 @@ import JamunHoney from "./views/honey/JamunHoney";
 import WildHoney from "./views/honey/WildHoney";
 import LitchiHoney from "./views/honey/LitchiHoney";
 import TulsiHoney from "./views/honey/TulsiHoney";
+import Address from "./views/addresses/Address";
 function App() {
   return (
     <Routes>
@@ -43,9 +44,10 @@ function App() {
       <Route path="/ourstory" element={<OurStory />} />
       <Route path="/terms-conditions" element={<TermsCondition />} />
       <Route path="/account">
-        <Route path="/account/register" element={<Registration />} />
-        <Route index path="/account/login" element={<Login />} />
-        <Route path="/account/recover" element={<ForgotPassword />} />
+        <Route path="register" element={<Registration />} />
+        <Route index path="login" element={<Login />} />
+        <Route path="recover" element={<ForgotPassword />} />
+        <Route path = "addressess" element ={<Address/>}/>
       </Route>
       <Route path="cookie-privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/about-us" element={<About />} />
