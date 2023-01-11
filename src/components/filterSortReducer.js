@@ -1,4 +1,5 @@
 export const reducer = (state, action) => {
+  console.log(action,"jjjjjjjjjj")
   switch (action.type) {
     case "SORT":
       return { ...state, sortBy: action.payload };

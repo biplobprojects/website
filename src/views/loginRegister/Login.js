@@ -8,6 +8,8 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import Button from "../../components/Inputfields/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
+import { useSelector, useDispatch} from 'react-redux';
+import { userDet } from "../../Features/UserDetails";
 
 const initialValues = {
   email: "",
@@ -16,6 +18,7 @@ const initialValues = {
 
 export default function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 const[email1, setEmail] = useState();
   const [loginSuccess, setLoginSucess] = useState();
   const { values, touched, handleChange, errors, handleSubmit } = useFormik({
@@ -28,7 +31,16 @@ const[email1, setEmail] = useState();
       ) {
         localStorage.setItem("email", "test@gmail.com");
         localStorage.setItem("id", "123");
-
+        let data = {
+          id:1,
+          name:"sapna",
+          age:24,
+          Adress:"pg",
+          phone:9655555555,
+          lastname:"tekoor",
+          city:"mumbai"
+        }
+dispatch(userDet(data))
         navigate("/");
       }
     },

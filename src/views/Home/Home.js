@@ -15,7 +15,11 @@ import FiveStar from "../../components/reviewStar/FiveStar";
 import Products from "../../components/products/Products";
 import { AllProductsData } from "../../components/AllProductsData";
 import CollectionContainer from "../../components/collectionContainer/CollectionContainer";
+import { useSelector } from "react-redux";
+
 export default function Home() {
+  const details = useSelector((state) => state.userDet)
+  console.log(details, "gggggggggggggggggggggggg")
   const reviewData = [
     {
       image: user1,

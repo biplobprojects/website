@@ -1,0 +1,50 @@
+.cart h6 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #121212bf;
+}
+.product-details-container img {
+  float: left;
+  height: 120px;
+  width: 120px;
+}
+
+.product-link a {
+  color: #121212;
+}
+
+.product-link a:hover {
+  text-decoration: underline !important;
+}
+.product-details-container P {
+  color: #121212bf;
+  font-size: 15px;
+  margin-bottom: 8px;
+  line-height: 22px;
+}
+.total-price{
+    font-size: 17px;
+    color: #121212;
+}
+
+.total-subtotal{
+    font-size: 15px;
+    color: #121212;
+    font-weight: normal;
+}
+
+.total-subtotal-value{
+    font-size: 19px;
+    color: #121212;
+}
+.cart-footer span{
+    font-size: 14px;
+    color: #121212;
+
+}
+
+@media screen and (min-width:769px){
+    .cart-footer {
+        max-width: 22rem;
+      }
+}
