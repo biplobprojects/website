@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
 import Banner from "../../components/banner/Banner";
-import CollectionCards from "../../components/collectionCards/CollectionCards";
 import Title from "../../components/titles/Title";
 
 import Benefits from "../../assets/images/Benefits.jpg";
@@ -17,8 +16,6 @@ import Products from "../../components/products/Products";
 import { AllProductsData } from "../../components/AllProductsData";
 import CollectionContainer from "../../components/collectionContainer/CollectionContainer";
 export default function Home() {
-
-
   const reviewData = [
     {
       image: user1,
@@ -51,7 +48,7 @@ export default function Home() {
       <div className="section-container">
         <Title class="text-center mb-4 mb-lg-5" heading="Collections" />
         <div className="container">
-          <CollectionContainer/>
+          <CollectionContainer />
         </div>
       </div>
 
@@ -73,24 +70,30 @@ export default function Home() {
       </div>
 
       <div className="section-container">
-      <div className="container">
-        <div className="section-sub-container text-center">
-          <Title class="text-center mb-4" heading="Livasa Natural Products" />
-          <p className="mb-5">
-            Livasa products are processed for a rich taste and quality.
-          </p>
-        </div>
+        <div className="container">
+          <div className="section-sub-container text-center">
+            <Title class="text-center mb-4" heading="Livasa Natural Products" />
+            <p className="mb-5">
+              Livasa products are processed for a rich taste and quality.
+            </p>
+          </div>
           <Row>
             {AllProductsData.map((e) => {
               return (
-                <Col md={6} lg={3} sm={6} xs={6}>
+                <Col md={12} lg={6} sm={12} xs={12}>
                   <Products
                     src={e.image}
                     src1={e.url}
                     produtName={e.title}
                     productPrice={e.Price}
                     path={e.path}
-                    />
+                    discount={e.discountedPrice}
+                    origin={e.origin}
+                    url={e.url}
+                    count={e.count}
+                    qr={e.qr}
+                    likes={e.likes}
+                  />
                 </Col>
               );
             })}
@@ -118,8 +121,11 @@ export default function Home() {
 
       {/* Our Clients Section */}
       <div className="section-container">
-        <Title class="text-center mb-5" heading="Our Happy Clients
-" />
+        <Title
+          class="text-center mb-5"
+          heading="Our Happy Clients
+"
+        />
         <div className="container">
           <Row>
             {review.map((e) => {

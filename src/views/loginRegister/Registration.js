@@ -27,7 +27,7 @@ export default function Registration() {
   return (
     <div className="loginregister-container">
       <Title class="text-center mb-4" heading="Create account" />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="loginForm-container">
         <div className="mb-3">
           <InputField
             htmlFor="name"

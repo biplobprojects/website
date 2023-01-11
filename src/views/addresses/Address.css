@@ -1,0 +1,18 @@
+.address-container {
+  max-width: 55% !important;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.form-title {
+  font-size: 26px;
+}
+.address-container a {
+  text-decoration: underline !important;
+  color: #121212;
+  font-size: 16px;
+}
+
+.address-container a:hover {
+  font-weight: 500;
+}
