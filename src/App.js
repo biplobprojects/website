@@ -27,8 +27,10 @@ import WildHoney from "./views/honey/WildHoney";
 import LitchiHoney from "./views/honey/LitchiHoney";
 import TulsiHoney from "./views/honey/TulsiHoney";
 import Address from "./views/addresses/Address";
+import CheckOut from "./views/checkout/CheckOut";
 function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/collections" element={<Collection />}>
@@ -58,8 +60,15 @@ function App() {
       <Route path = "/wild-honey" element={<WildHoney/>}/>
       <Route path="/litchi-honey" element={<LitchiHoney/>}/>
       <Route path="/tulsi-honey" element={<TulsiHoney/>}/>
+      <Route path="/checkout" element={<CheckOut/>}/>
 
     </Routes>
+
+    {/* <Routes>
+    <Route path="/checkout" element={<CheckOut/>}/>
+
+    </Routes> */}
+    </>
   );
 }
 

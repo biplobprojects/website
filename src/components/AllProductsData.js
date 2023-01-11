@@ -33,7 +33,9 @@ export const AllProductsData = [
     discountedPrice: 300,
     url:"https://reactjs.org/",
     likes:29,
-    qr:QR
+    qr:QR,
+    id:1,
+    certificate:honey1,
 
 
   },

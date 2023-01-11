@@ -273,6 +273,7 @@ export default function FilterSort(props) {
             likes,
             qr,
             url,
+            certificate
           }) => (
             <Col md={12} lg={6} sm={12} xs={12}>
               <Products
@@ -286,6 +287,7 @@ export default function FilterSort(props) {
                 count={count}
                 qr={qr}
                 likes={likes}
+                certificate = {certificate}
               />
             </Col>
           )

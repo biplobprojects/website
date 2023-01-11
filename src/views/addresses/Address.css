@@ -16,3 +16,15 @@
 .address-container a:hover {
   font-weight: 500;
 }
+
+.data-address-container p{
+  font-size: 18px;
+  color: #121212bf;
+}
+.data-address-btn-container button{
+  background-color: white;
+  color: orange;
+  transform: none;
+  font-weight: bold;
+  width: 120px;
+}

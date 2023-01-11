@@ -187,7 +187,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="mobile-hidden">
-                  <Link to="/">
+                  <Link to="/cart">
                     <BsCart />
                   </Link>
                 </li>

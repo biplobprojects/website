@@ -15,7 +15,7 @@ const initialValues = {
   name: "",
   number: "",
   company: "",
-  Select: "",
+  select: "",
   postalcode: "",
   company: "",
   lastname: "",
@@ -24,9 +24,22 @@ const initialValues = {
   city: "",
 };
 export default function AddressForm() {
+  const options1 = useMemo(() => countryList().getData(), []);
+// const [FieldValue, setFieldValue] = useState()
+const [options, setOptions] = useState(options1);
+const defaultValue = (options, value) => {
+  console.log("value here", value);
+  return options ? options.find(option => option.value === value) : "";
+};
   const [value, setValue] = useState("");
-
-  const options = useMemo(() => countryList().getData(), []);
+  const handleAddOption = () => {
+    // this is where I can change the select value but nothing happens,
+    // due to react-select does not have a name attribute I can`t find a way
+    // change the defaultValue externaly
+    // also tried to add an object
+    setOptions([...options, { label: "test option", value: "test option" }]);
+    return setFieldValue("select", "test option");
+  };
   const [submitData, setSubmitData] = useState(false);
   const {
     values,
@@ -49,6 +62,7 @@ export default function AddressForm() {
     setValue(value);
   };
 
+  console.log(values.select)
   return (
     <div className="address-form">
       <form onSubmit={handleSubmit}>
@@ -136,12 +150,12 @@ export default function AddressForm() {
         </div>
         <div className="mb-3">
           <Select
-            options={options}
+          value={defaultValue(options, values.select)}
+          options={options}
             placeholder="Select Country/Region"
-            id="Select"
-            value={values.Select}
-            onChange={setFieldValue}
-          />
+            id="select"
+            onChange={newValue => setFieldValue("select", newValue.value)}  
+                  />
         </div>
         <div className="mb-3">
           <InputField
