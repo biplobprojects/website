@@ -95,7 +95,7 @@ export default function Products(props) {
           </p>
           <img className="d-block mb-2" width="70" height="70" src={props.qr} />
 
-          <Button buttonText="Add To Cart"></Button>
+          <Button onClick={props.onClick} buttonText="Add To Cart"></Button>
         </Col>
       </Row>
     </div>

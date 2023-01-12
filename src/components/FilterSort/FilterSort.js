@@ -10,7 +10,12 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import FilterIcon from "../../assets/images/settings-sliders.png";
 import "./FilterSort.css";
 import InputField from "../Inputfields/InputField";
+import {fetchProducts} from "../../Features/ProductSlice"
+import './FilterSort.css'
 import { GrFormClose } from "react-icons/gr";
+import { addToCart } from "../../Features/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 export default function FilterSort(props) {
   const [value, setValue] = useState(0);
   const MAX = 10;
@@ -44,6 +49,7 @@ export default function FilterSort(props) {
     endPrice,
     priceRange
   );
+  const products = useSelector((state) => state.products);
 
   const removeFilterHandler = () => {
     setStartPrice(false);
@@ -72,8 +78,11 @@ export default function FilterSort(props) {
     let userValue = event.target.value;
     dispatch({ type: "SORT", payload: userValue });
   };
+  const dispatch1 = useDispatch();
+
   return (
     <div className="filter-sort-container">
+     
       <Row className="justify-content-between align-items-center mb-5">
         <Col sm={5} xs={6} md={4}>
           <div className="filter-ofcanvas-container">
@@ -262,32 +271,23 @@ export default function FilterSort(props) {
       </div>
       <Row>
         {filteredData.map(
-          ({
-            image,
-            title,
-            Price,
-            origin,
-            count,
-            discountedPrice,
-            href,
-            likes,
-            qr,
-            url,
-            certificate
-          }) => (
+          (e) => (
             <Col md={12} lg={6} sm={12} xs={12}>
               <Products
-                src={image}
-                src1={url}
-                produtName={title}
-                discount={discountedPrice}
-                productPrice={Price}
-                origin={origin}
-                url={url}
-                count={count}
-                qr={qr}
-                likes={likes}
-                certificate = {certificate}
+                src={e.image}
+                src1={e.url}
+                produtName={e.title}
+                discount={e.discountedPrice}
+                productPrice={e.Price}
+                origin={e.origin}
+                url={e.url}
+                count={e.count}
+                qr={e.qr}
+                likes={e.likes}
+                certificate = {e.certificate}
+                onClick={() => {
+                  dispatch1(addToCart(e));
+                }}
               />
             </Col>
           )

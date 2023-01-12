@@ -8,7 +8,7 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import Button from "../../components/Inputfields/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { userDet } from "../../Features/UserDetails";
 
 const initialValues = {
@@ -19,7 +19,7 @@ const initialValues = {
 export default function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-const[email1, setEmail] = useState();
+  const [email1, setEmail] = useState();
   const [loginSuccess, setLoginSucess] = useState();
   const { values, touched, handleChange, errors, handleSubmit } = useFormik({
     initialValues: initialValues,
@@ -32,28 +32,27 @@ const[email1, setEmail] = useState();
         localStorage.setItem("email", "test@gmail.com");
         localStorage.setItem("id", "123");
         let data = {
-          id:1,
-          name:"sapna",
-          age:24,
-          Adress:"pg",
-          phone:9655555555,
-          lastname:"tekoor",
-          city:"mumbai"
-        }
-dispatch(userDet(data))
+          id: 1,
+          name: "sapna",
+          age: 24,
+          Adress: "pg",
+          phone: 9655555555,
+          lastname: "tekoor",
+          city: "mumbai",
+        };
+        dispatch(userDet(data));
         navigate("/");
       }
     },
   });
-  console.log(localStorage.getItem("email"))
+  console.log(localStorage.getItem("email"));
   useEffect(() => {
     let id = localStorage.getItem("id");
-    let emailId = localStorage.getItem("email")
+    let emailId = localStorage.getItem("email");
     setLoginSucess(id);
     setEmail(emailId);
 
-    console.log(email1,"rrrrrrrrrr")
-
+    console.log(email1, "rrrrrrrrrr");
   }, [email1]);
 
   const logoutHandler = () => {

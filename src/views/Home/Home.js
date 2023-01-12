@@ -1,25 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Banner from "../../components/banner/Banner";
 import Title from "../../components/titles/Title";
-
 import Benefits from "../../assets/images/Benefits.jpg";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import ReviewContainer from "../../components/reviewcontainer/ReviewContainer";
-import FourStar from "../../components/reviewStar/FourStar";
 import user1 from "../../assets/images/user_01.png";
 import user2 from "../../assets/images/user_02.png";
 import user3 from "../../assets/images/user_03.png";
-import FiveStar from "../../components/reviewStar/FiveStar";
-import Products from "../../components/products/Products";
-import { AllProductsData } from "../../components/AllProductsData";
 import CollectionContainer from "../../components/collectionContainer/CollectionContainer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../Features/ProductSlice";
+import Products from "../../components/products/Products";
+import { addToCart } from "../../Features/CartSlice";
 
 export default function Home() {
-  const details = useSelector((state) => state.userDet)
-  console.log(details, "gggggggggggggggggggggggg")
+  const product = useSelector((state) => state.products);
+  const details = useSelector((state) => state.userDet);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  const productData = product.list;
+
+  const filterProductHoney = productData.filter((e) => {
+    return e.honey == true;
+  });
+
+  console.log(details, "gggggggggggggggggggggggg");
   const reviewData = [
     {
       image: user1,
@@ -82,7 +92,7 @@ export default function Home() {
             </p>
           </div>
           <Row>
-            {AllProductsData.map((e) => {
+            {filterProductHoney.map((e) => {
               return (
                 <Col md={12} lg={6} sm={12} xs={12}>
                   <Products
@@ -97,6 +107,9 @@ export default function Home() {
                     count={e.count}
                     qr={e.qr}
                     likes={e.likes}
+                    onClick={() => {
+                      dispatch(addToCart(e));
+                    }}
                   />
                 </Col>
               );

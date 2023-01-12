@@ -10,7 +10,11 @@ import { BsInstagram } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import Logo from "../../assets/images/Logo.png";
 import SearchModal from "../searchmodal/SearchModal";
+import { useDispatch, useSelector } from "react-redux";
+import {cartTotalSelector} from "../../Features/TotalSlice"
 const Navbar = () => {
+  const total = useSelector(cartTotalSelector);
+  const dispatch = useDispatch();
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -48,9 +52,10 @@ const Navbar = () => {
             <Link to="/">
               <BsSearch />
             </Link>
-            <Link to="/">
-              <BsCart />
-            </Link>
+            <Link to="/cart">
+              <span className="position-relative d-inline-block"> <BsCart className="position-relative"/>
+                    {total>0  && <span className="cart-count">{total}</span>}    </span>
+              </Link>
           </div>
 
           <div className={`${click ? "nav-menu active" : "nav-menu"} d-flex `}>
@@ -188,7 +193,8 @@ const Navbar = () => {
                 </li>
                 <li className="mobile-hidden">
                   <Link to="/cart">
-                    <BsCart />
+                    <div className="position-relative"><BsCart/>
+                    {total>0  && <span className="cart-count">{total}</span>}</div>
                   </Link>
                 </li>
                 <li className="mobile-visible mb-3">

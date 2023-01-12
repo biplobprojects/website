@@ -69,6 +69,21 @@ a.active {
   border-bottom: 1px solid #121212;
   color: #121212;
 }
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: 3px;
+  border-radius: 50%;
+  background-color: orange;
+  color: white;
+  padding: 2px;
+  font-size: 10px;
+  font-weight: bold;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  justify-content: center;
+}
 @media screen and (max-width: 1150px) {
   .nav-item a:hover,
   a.active {
@@ -199,5 +214,11 @@ a.active {
     width: 24px;
     height: 24px;
   }
+  .cart-count {
+    top: -3px;
+    right: 0px;
+    font-size: 8px;
+    height: 16px;
+    width: 16px;
+  }
 }
-

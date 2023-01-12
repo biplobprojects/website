@@ -4,8 +4,17 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import FeaturedCollection from "../../components/featuedCollections/FeaturedCollection";
 import CartTable from "../../components/cartTable/CartTable";
+import { useDispatch, useSelector } from "react-redux";
+import { cartTotalPriceSelector} from "../../Features/TotalSlice"
+import { increament, decrement, clear } from "../../Features/CartSlice";
 
 export default function Cart() {
+
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const totalPrice = useSelector(cartTotalPriceSelector);
+  console.log(totalPrice)
+console.log(cart,"cccccccccccccccccc")
   return (
     <div className="container cart-container">
       {/* <div className="cart-empty-container text-center">
@@ -22,9 +31,10 @@ export default function Cart() {
             Continue Shopping
           </Link>
         </div>
-        <CartTable />
+        <CartTable  cart = {cart} />
       </div>
       <div className="mt-5">
+       
         <FeaturedCollection />
       </div>
     </div>
